@@ -1,0 +1,81 @@
+.directionItemListContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh; 
+    position: relative;
+    background-color: #000;
+}
+
+.imgContainer img{
+    width: auto;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+}
+
+.imgContainer p{
+    font-family: "Playwrite ES Deco", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    width:100px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    font-size: 4em; 
+    text-align:left;
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.25); 
+    padding: 200px;
+}
+
+.capImgContainer {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.capImgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+}
+
+.capImgContainer p {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-family: "Playwrite ES Deco", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    border-radius: 5px;
+    max-width: 90%;
+}
