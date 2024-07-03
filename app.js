@@ -1,6 +1,7 @@
+import Footer from './Components/Footer/Footer'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import Navbar from './Components/Navbar/Navbar'
-import ProdcutManager from './Components/ProductoManager/ProductManager'
+import ProductManager from './Components/ProductoManager/ProductManager'
 import './index.css'
 
 function app() {
@@ -8,7 +9,8 @@ function app() {
         <>
         <Navbar />
         <ItemListContainer />
-        <ProdcutManager />
+        <ProductManager />
+        <Footer/>
         </>
     )
 }
