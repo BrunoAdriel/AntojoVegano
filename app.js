@@ -10,10 +10,10 @@ function app() {
     return(
         <>
         <BrowserRouter>
+        <Navbar />
             <Routes>
                 <Route path='/' element={
                     <>
-                    <Navbar />
                     <ItemListContainer />
                     <ProductManager />
                     <Footer/>
