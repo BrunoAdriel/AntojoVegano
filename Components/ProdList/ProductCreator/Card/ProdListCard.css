@@ -1,0 +1,5 @@
+/* ese maxwidth es de boostrap ajustar */
+
+.containerCard{
+    max-width: 540px;
+}

@@ -1,0 +1,8 @@
+.containerTitleProd{
+    width: auto;
+    height: 20vh;
+    background-position:center;
+    background-attachment: contain;
+    background-size: cover;
+    border-radius: 8px;
+}
