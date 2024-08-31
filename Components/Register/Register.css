@@ -1,11 +1,11 @@
-.LoginPage{
+.RegisterPage{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.LoginImageContainer{
+.RegisterImageContainer{
     width: 85%;
     height: 75%;
     background-color: white;
@@ -23,36 +23,37 @@
     background-size: cover;
 }
 
-.LoginImageContainer img{
+.RegisterImageContainer img{
     width: 100vw;
     height: 100vh; 
 }
 
 /* Clases del Form */
 
-.LoginFormContainer{
+.RegisterFormContainer{
     width: 25%;
-    height: 45%;
+    height: 67%;
     background-color: rgba(128, 128, 128, 0.878);
     z-index: 1;
     position: absolute;
+    top: 20%;
     right: 15%;
     border-radius: 8px;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.7);
 }
 
-.LoginFormContainer form{
+.RegisterFormContainer form{
     display: flex;
     flex-direction: column; 
     justify-content: center;
     margin: 5% 5%;
 }
 
-.LoginFormContainer form a{
+.RegisterFormContainer form a{
     color: rgb(105, 57, 23);
 }
 
-.LoginFormContainer form button{
+.RegisterFormContainer form button{
     display: flex;
     justify-content: center;
     align-items: center;
