@@ -4,7 +4,8 @@ import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import Login from './Components/Login/Login';
 import Navbar from './Components/Navbar/Navbar';
 import ProductManager from './Components/ProductoManager/ProductManager';
-import Register from './Components/Register/Register'
+import Register from './Components/Register/Register';
+import ProdList from './Components/ProdList/ProdList'
 import './index.css';
 
 function app() {
@@ -17,6 +18,7 @@ function app() {
                     <>
                     <ItemListContainer />
                     <ProductManager />
+                    <ProdList />
                     <Footer/>
                     </>
                     }/>
