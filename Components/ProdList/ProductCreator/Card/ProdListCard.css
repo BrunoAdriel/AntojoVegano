@@ -1,5 +1,26 @@
-/* ese maxwidth es de boostrap ajustar */
+.containerCard {
+    max-width: 600px;
+    position: relative;
+}
 
-.containerCard{
-    max-width: 540px;
+.classBtnComprar {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.input-group {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    display: flex;
+    gap: 5px;
+}
+
+.inputCantidad {    
+    flex: 1;
+}
+
+.btnComprar {
+    flex-shrink: 0;
 }
