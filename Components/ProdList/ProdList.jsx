@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import ProdListCategory from "./ProductCreator/CategoryProduct/ProdListCategory";
 
-// Mostrar las categorias y los productos
 
+// Constante para guardar y pasar el carrito
+export let carritoConstante = []
+
+// Mostrar las categorias y los productos
 const ProdList = () => {
 
     const productData = [     {
@@ -36,6 +39,29 @@ const ProdList = () => {
     // Agregar mas secciones
     ]
 
+    const [carrito, setCarrito] = useState([])
+// Guardado y acumulacion de prods carrito
+    const addToCarrito = (product)=>{
+        setCarrito((prevCarrito) => {
+            const existingProductIndex = prevCarrito.findIndex(item => item.title === product.title);
+            if (existingProductIndex !== -1) {
+                // Actualizar la cantidad del producto existente
+                const updatedCarrito = [...prevCarrito];
+                updatedCarrito[existingProductIndex].quantity += product.quantity;
+                return updatedCarrito;
+            } else {
+                // Añadir nuevo producto al carrito
+                return [...prevCarrito, product];
+            }
+        });
+    };
+
+// useEffect para actualizar la constante carritoConstante
+useEffect(() => {
+carritoConstante = carrito;
+console.log("carritoConstante actualizado:", carritoConstante);
+}, [carrito]);
+
     return(<>
         <div className="container">
             {productData.map((category, index)=>(
@@ -44,6 +70,7 @@ const ProdList = () => {
                 categoryName={category.sectionName}
                 categoryImg={category.sectionImage}
                 products={category.products}
+                addToCarrito={addToCarrito}
                 />
             ))}
         </div>

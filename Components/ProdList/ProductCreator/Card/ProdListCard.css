@@ -15,6 +15,7 @@
     right: 5%;
     display: flex;
     gap: 5px;
+    max-width: 30%;
 }
 
 .inputCantidad {    
@@ -23,4 +24,15 @@
 
 .btnComprar {
     flex-shrink: 0;
+}
+
+.selected-circle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 10;
 }
