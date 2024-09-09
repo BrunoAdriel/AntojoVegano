@@ -1,10 +1,9 @@
-import React,{ useState, useEffect } from "react";
+import React from "react";
 import ProdListCard from "../Card/ProdListCard";
 import './ProdListCategory.css';
 
 // Seleccionar la categoria y armar la vista
 const ProdListCategory = ({ categoryName, categoryImg, products, addToCarrito}) =>{
-
 
     return(<>
         <div>
