@@ -6,7 +6,9 @@ function Navbar(){
     return(
         <div className="NavControler">
             <section>
-                <img src="#" alt="Antojo Vegano" className="logoContainer" />
+                <a href="/">
+                    <img src="#" alt="Antojo Vegano" className="logoContainer"/>
+                </a>
             </section>
             <section>
                 <ul className="prodContainer">
