@@ -61,7 +61,7 @@ const ProdListCard = ({ img, title, description, addToCarrito }) => {
                                     <input type="number" className="form-control inputCantidad" placeholder="Cantidad" min="1" value={quantity} onChange={handleInput} 
                                         // prevenciones de caracteres especiales
                                         onKeyDown={(e)=>{
-                                            if (e.key==="-" || e.key==="_" || e.key==="+" || e.key==="." || e.key==="*" || e.key==="%"){e.preventDefault();}
+                                            if (e.key==="-" || e.key==="_" || e.key==="+" || e.key==="." || e.key==="*" || e.key==="%" || e.key==="/"){e.preventDefault();}
                                         }}
                                     />
                                     <button type="button" className="btn btn-success btnComprar" onClick={handleBtnComprar}>Comprar</button>
