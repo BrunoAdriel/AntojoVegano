@@ -31,7 +31,7 @@
 /* Clases del Form */
 
 .RegisterFormContainer{
-    width: 25%;
+    width: 45%;
     height: 67%;
     background-color: rgba(128, 128, 128, 0.878);
     z-index: 1;
@@ -58,5 +58,5 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    margin: 2% auto 0; 
+    align-self: center;
 }
