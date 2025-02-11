@@ -17,6 +17,8 @@ const ProdListCategory = ({ categoryName, categoryImg, products, addToCarrito}) 
                         img={product.img}
                         title={product.title}
                         description={product.description}
+                        stock={product.stock}
+                        price={product.price}
                         addToCarrito={addToCarrito}
                         />
                     ))}

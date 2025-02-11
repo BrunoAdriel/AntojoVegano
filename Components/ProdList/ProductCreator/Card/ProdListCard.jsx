@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import './ProdListCard.css'
 
 // Codigo para crear la card con los datos de cada producto
-const ProdListCard = ({ img, title, description, addToCarrito }) => {
+const ProdListCard = ({ img, title, description, stock, price, addToCarrito }) => {
 
     const [showInput, setShowInput] = useState();
     const [quantity, setQuantity] = useState(1);
@@ -50,8 +50,9 @@ const ProdListCard = ({ img, title, description, addToCarrito }) => {
                         <div className="card-body">
                             <h5 className="card-title">{title}</h5>
                             <p className="card-text">{description}</p>
+                            <p className="card-text">Cantidad disponible: {stock}</p>
+                            <p className="card-text text-center">${price}</p>
                         </div>
-
                         <div className="btn-container">
                             {!showInput && (
                                 <button type="button" className="btn btn-success classBtnComprar" onClick={handleBtnCantidad}>Cantidad</button>

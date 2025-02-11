@@ -26,7 +26,7 @@ useEffect(()=>{
             const productRespose = await fetch('http://localhost:5000/products');
             const productData = await productRespose.json();
 
-
+            console.log(productData);
         const combinedData = categoryData.map(category =>({
             sectionName: category.CategoryName,
             sectionImage: category.ImgCat || 'default-category.jpg',
