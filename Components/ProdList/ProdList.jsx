@@ -5,25 +5,50 @@ import ProdListCategory from "./ProductCreator/CategoryProduct/ProdListCategory"
 // Constante para guardar y pasar el carrito
 export let carritoConstante = []
 
-// Mostrar las categorias y los productos
+
 const ProdList = () => {
 
+// Obtengo los productos y las categorias
+
 const [prods, setProds] = useState([]);
+const [category, setCategory] = useState([]);
+
 
 useEffect(()=>{
-    const fetchProducts = async () => {
+    const fetchData = async ()=>{
         try{
-            const response = await fetch('http://localhost:5000/products');
-            const data = await response.json();
-            setProds(data);
-        } catch(error) {
-            console.error("Error al obtener los productos de la BD", error);
+            //Obtengo las Categorias de la BD
+            const categoryRespose = await fetch('http://localhost:5000/category');
+            const categoryData = await categoryRespose.json();
+
+
+            //Obtener los productos de la BD
+            const productRespose = await fetch('http://localhost:5000/products');
+            const productData = await productRespose.json();
+
+
+        const combinedData = categoryData.map(category =>({
+            sectionName: category.CategoryName,
+            sectionImage: category.ImgCat || 'default-category.jpg',
+            products: productData
+                .filter(product => product.Category_ID === category.Category_ID)
+                .map(product =>({
+                    img: product.ImageURL || 'default-product.jpg',
+                    title: product.ProdName,
+                    description: product.Description,
+                    stock: product.QuantityStock,
+                    price: product.Unit_price,
+                }))
+        }));
+        setCategory(combinedData);
+        } catch(error){
+            console.error('Error al obetener los datos de la BD', error);
         }
     };
-    fetchProducts();
-}, []);
+    fetchData();
+},[]);
 
-console.log(prods);
+
 
     const [carrito, setCarrito] = useState([])
 // Guardado y acumulacion de prods carrito
@@ -50,7 +75,7 @@ console.log("carritoConstante actualizado:", carritoConstante);
 
     return(<>
         <div className="container">
-            {prods.map((category, index)=>(
+            {category.map((category, index)=>(
                 <ProdListCategory
                 key={index}
                 categoryName={category.sectionName}

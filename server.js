@@ -21,6 +21,16 @@ db.query('SELECT * FROM products;', (err, results) => {
 });
 });
 
+
+app.get('/category', (req, res) => {
+    db.query('SELECT * FROM category;', (err, results) => { 
+        if(err){
+            return res.status(500).json({error: err.message});
+        }
+        res.json(results);
+    });
+});
+
 app.listen(5000, () => console.log('🚀 Servidor corriendo en http://localhost:5000'));
 
 

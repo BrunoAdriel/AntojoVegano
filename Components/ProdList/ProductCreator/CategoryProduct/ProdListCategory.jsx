@@ -3,7 +3,7 @@ import ProdListCard from "../Card/ProdListCard";
 import './ProdListCategory.css';
 
 // Seleccionar la categoria y armar la vista
-const ProdListCategory = ({ categoryName, categoryImg, prods, addToCarrito}) =>{
+const ProdListCategory = ({ categoryName, categoryImg, products, addToCarrito}) =>{
 
     return(<>
         <div>
@@ -11,7 +11,7 @@ const ProdListCategory = ({ categoryName, categoryImg, prods, addToCarrito}) =>{
             <section className="containerTitleProd" style={{ backgroundImage: `url(${categoryImg})`}}> </section>
             <section className="container">
                 <div className="product-cards-container distasnceBox">
-                    {prods.map((product, index) =>(
+                    {products.map((product, index) =>(
                         <ProdListCard
                         key={index}
                         img={product.img}
