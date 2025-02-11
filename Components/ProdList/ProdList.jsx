@@ -28,6 +28,7 @@ useEffect(()=>{
 
             console.log(productData);
         const combinedData = categoryData.map(category =>({
+            ID: category.Category_ID,
             sectionName: category.CategoryName,
             sectionImage: category.ImgCat || 'default-category.jpg',
             products: productData
@@ -38,6 +39,7 @@ useEffect(()=>{
                     description: product.Description,
                     stock: product.QuantityStock,
                     price: product.Unit_price,
+                    ID: product.Category_ID
                 }))
         }));
         setCategory(combinedData);
@@ -45,7 +47,7 @@ useEffect(()=>{
             console.error('Error al obetener los datos de la BD', error);
         }
     };
-    fetchData();
+    fetchData(); 
 },[]);
 
 
@@ -76,13 +78,15 @@ console.log("carritoConstante actualizado:", carritoConstante);
     return(<>
         <div className="container">
             {category.map((category, index)=>(
-                <ProdListCategory
-                key={index}
-                categoryName={category.sectionName}
-                categoryImg={category.sectionImage}
-                products={category.products}
-                addToCarrito={addToCarrito}
+                <div key={category.ID} id={`category-${category.ID}`}>
+                    <ProdListCategory
+                    key={index}
+                    categoryName={category.sectionName}
+                    categoryImg={category.sectionImage}
+                    products={category.products}
+                    addToCarrito={addToCarrito}
                 />
+                </div>
             ))}
         </div>
     </>)

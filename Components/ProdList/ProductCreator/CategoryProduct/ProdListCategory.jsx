@@ -3,7 +3,7 @@ import ProdListCard from "../Card/ProdListCard";
 import './ProdListCategory.css';
 
 // Seleccionar la categoria y armar la vista
-const ProdListCategory = ({ categoryName, categoryImg, products, addToCarrito}) =>{
+const ProdListCategory = ({ categoryName, categoryImg, products, addToCarrito, ID}) =>{
 
     return(<>
         <div>
